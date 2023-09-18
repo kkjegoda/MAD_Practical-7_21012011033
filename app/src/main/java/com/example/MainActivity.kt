@@ -1,5 +1,6 @@
 package com.example
 
+import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -20,10 +21,12 @@ class MainActivity : AppCompatActivity() {
         myVideoView.setVideoURI(Uri)
         myVideoView.requestFocus()
         myVideoView.start()
-    }
+
 
     val button = findViewById<FloatingActionButton>(R.id.floatingActionButton)
-    button
-
+ button.setOnClickListener {
+     Intent(this, YoutubeActivity::class.java).apply { startActivity(this) }
+ }
+ }
 }
 
